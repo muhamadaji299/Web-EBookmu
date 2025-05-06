@@ -1,0 +1,48 @@
+.btn-favorit i {
+    color: red;
+}
+
+.btn-outline-danger.active i {
+    color: white;
+}
+
+.favorit-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    transition: right 0.4s ease;
+    overflow-y: auto;
+}
+
+.favorit-panel.show {
+    right: 0;
+}
+
+.favorit-header {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.bg-custom {
+    background-color: #10B981;
+}
+
+.custom-hover:hover {
+background-color: #00cfff;
+color: white;
+transition: 0.3s ease-in-out;
+}
+
+/* Tambahan untuk tombol kanan atas jika kamu ingin merapikan */
+.btn-top-right {
+margin-left: 10px;
+border-radius: 10px;
+font-weight: 500;
+}
