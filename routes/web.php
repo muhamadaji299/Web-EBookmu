@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\KelolaBukuController;
+use App\Http\Controllers\admin\LaporanController;
 use App\Http\Controllers\admin\PenggunaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\user\UserController;
@@ -56,6 +57,7 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('kelolabuku', KelolaBukuController::class);
     Route::resource('pengguna', PenggunaController::class)->only(['index','destroy']);
     Route::get('bukularis', [AdminController::class, 'bukuTerpopuler'])->name('admin.bukularis.index');
+    Route::resource('laporan', LaporanController::class);
 });
 
 Route::middleware(['auth', 'user'])->group(function (){

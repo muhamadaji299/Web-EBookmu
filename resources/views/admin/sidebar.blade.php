@@ -21,8 +21,8 @@
             "icon" => "fas fa-exchange-alt"
         ],
         (object)[
-            "title" => "Kelola Laporan",
-            "path" => "admin/laporan/index",
+            "title" => "Kelola Pesan",
+            "path" => "laporan",
             "icon" => "fas fa-file-alt"
         ],
     ];

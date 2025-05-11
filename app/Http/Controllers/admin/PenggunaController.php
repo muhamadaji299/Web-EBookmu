@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-use function Pest\Laravel\delete;
-
 class PenggunaController extends Controller
 {
     /**
@@ -21,7 +19,7 @@ class PenggunaController extends Controller
         if ($request->has('search') && $request->search != '') {
             $search = $request->search;
     
-            // Cari berdasarkan judul atau deskripsi
+            // Cari berdasarkan nama atau email
             $query->where(function($q) use ($search) {
                 $q->where('name', 'like', "%{$search}%")
                   ->orWhere('email', 'like', "%{$search}%");
@@ -29,25 +27,23 @@ class PenggunaController extends Controller
         }
     
         // Ambil data hasil query
-        $kelolabuku = $query->get();
-        $user = User::all();
-        return view('admin.pengguna.index',compact('user'));
+        $users = $query->get();  // Gunakan nama variabel yang benar dan konsisten
+    
+        return view('admin.pengguna.index', compact('users'));
     }
+
     /**
      * Remove the specified resource from storage.
      */
     public function destroy($id)
-{
-    $user = User::find($id);  // Menemukan user berdasarkan ID
+    {
+        $user = User::find($id);  // Menemukan user berdasarkan ID
 
-    // Jika user tidak ditemukan, beri pesan error
-    if (!$user) {
-        return redirect()->route('pengguna.index')->with('error', 'Pengguna tidak ditemukan!');
+        if (!$user) {
+            return redirect()->route('pengguna.index')->with('error', 'Pengguna tidak ditemukan!');
+        }
+
+        $user->delete();
+        return redirect()->route('pengguna.index')->with('success', 'Pengguna berhasil dihapus');
     }
-
-    // Jika user ditemukan, hapus
-    $user->delete();
-    return redirect()->route('pengguna.index')->with('success', 'Pengguna berhasil dihapus');
-}
-
 }

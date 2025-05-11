@@ -138,58 +138,58 @@
 
 
     <section class="py-5 bg-info" id="produk">
-    <div class="container">
-        <!-- Search Bar -->
-        <form action="{{ route('user.index') }}" method="GET">
-            <div class="row justify-content-center mb-4">
-                <div class="col-md-6">
-                    <div class="input-group mb-3">
-                        <input type="text" name="search" value="{{ request('search') }}" class="form-control" placeholder="Cari e-book..." aria-label="Search" value="{{ request()->input('search') }}">
-                        <button class="btn btn-primary" type="submit">
-                            <i class="fas fa-search"></i> Search
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <!-- Card E-Book -->
-        <div class="row g-4">
-            @foreach($kelolabuku as $buku)
-            <div class="col-md-4">
-                <div class="card h-100 shadow-sm">
-                    <img src="{{ asset('storage/'. $buku->cover )}}" class="e-book-img" alt="Ebook 1" style="height: 290px;">
-
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ $buku->judul }}</h5>
-                        <p class="card-text">{{ $buku->deskripsi }}</p>
-
-                        <!-- Rating -->
-                        <div class="mb-2">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star-half-alt text-warning"></i>
-                        </div>
-
-                        <!-- Tombol Aksi -->
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Tombol Baca mengarah ke file PDF -->
-                            <a href="{{ route('user.baca', $buku->id) }}" class="btn btn-info text-light" target="_blank">Baca</a>
+        <div class="container">
+            <!-- Search Bar -->
+            <form action="{{ route('user.index') }}" method="GET">
+                <div class="row justify-content-center mb-4">
+                    <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <input type="text" name="search" value="{{ request('search') }}" class="form-control" placeholder="Cari e-book..." aria-label="Search" value="{{ request()->input('search') }}">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i> Search
+                            </button>
                         </div>
                     </div>
                 </div>
+            </form>
+
+            <!-- Card E-Book -->
+            <div class="row g-4">
+                @foreach($kelolabuku as $buku)
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{ asset('storage/'. $buku->cover )}}" class="e-book-img" alt="Ebook 1" style="height: 290px;">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $buku->judul }}</h5>
+                            <p class="card-text">{{ $buku->deskripsi }}</p>
+
+                            <!-- Rating -->
+                            <div class="mb-2">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+
+                            <!-- Tombol Aksi -->
+                            <div class="mt-auto d-flex justify-content-between">
+                                <!-- Tombol Baca mengarah ke file PDF -->
+                                <a href="{{ route('user.baca', $buku->id) }}" class="btn btn-info text-light" target="_blank">Baca</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $kelolabuku->links('pagination::bootstrap-5') }}
+                </div>
+
+
             </div>
-            @endforeach
-            <div class="d-flex justify-content-center mt-4">
-              {{ $kelolabuku->links('pagination::bootstrap-5') }}
-          </div>
-
-
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="py-5 bg-light" id="komen">
         <div class="container">
@@ -287,21 +287,23 @@
                 <!-- Form -->
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow rounded-3">
-                        <form action="" method="POST">
+                        <form action="{{ route('laporan.store')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nama</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nama lengkap kamu">
+                                <input type="text" name="nama" class="form-control" id="name" placeholder="Nama lengkap kamu" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Alamat Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="email@kamu.com">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="email@kamu.com" required>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Pesan</label>
-                                <textarea class="form-control" id="message" rows="4" placeholder="Tulis pesanmu di sini..."></textarea>
+                                <textarea name="pesan" class="form-control" id="message" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-info text-light w-100">Kirim Pesan</button>
                         </form>
+
                     </div>
                 </div>
             </div>

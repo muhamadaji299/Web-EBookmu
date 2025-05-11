@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('email',320);
+            $table->text('pesan');
             $table->timestamps();
         });
     }
