@@ -287,7 +287,16 @@
                 <!-- Form -->
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow rounded-3">
-                        <form action="{{ route('laporan.store')}}" method="POST" enctype="multipart/form-data">
+
+                        {{-- ALERT JIKA BERHASIL --}}
+                        @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
+
+                        <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nama</label>
@@ -306,7 +315,9 @@
 
                     </div>
                 </div>
+
             </div>
+        </div>
         </div>
     </section>
 

@@ -33,7 +33,7 @@ class LaporanController extends Controller
             'email' => $request->email,
             'pesan' => $request->pesan
         ]);
-
+         dd($request->all());
         return redirect()->route('laporan.index')->with('success','Laporan berhasil di tamabahkan');
 
     }

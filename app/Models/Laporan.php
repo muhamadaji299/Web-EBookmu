@@ -12,6 +12,4 @@ class Laporan extends Model
    protected $table = 'komentars';
    
    protected $fillable = ['nama','email','pesan'];
-
-   public $timestamps = true;
 }
