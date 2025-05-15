@@ -120,7 +120,7 @@
                     <div class="icon-box">
                         <i class="fas fa-users fa-3x text-success"></i>
                         <h3 class="mt-3"> {{ $userCount }} Pengguna</h3>
-                        <p>Ribuan pengguna aktif di platform kami</p>
+                        <p>aktif di platform kami</p>
                     </div>
                 </div>
 
@@ -275,7 +275,7 @@
                     <div class="p-4 bg-white shadow rounded-3">
                         <h5 class="mb-3">Informasi Kontak</h5>
                         <p><i class="fas fa-envelope me-2 text-info"></i>info@ebookmu.com</p>
-                        <p><i class="fas fa-phone me-2 text-info"></i>+62 812-3456-7890</p>
+                        <p><i class="fas fa-phone me-2 text-info"></i>+62 857-1645-1180</p>
                         <p><i class="fas fa-map-marker-alt me-2 text-info"></i>Jl. Literasi No. 1, Bogor</p>
                         <h6 class="mt-4">Ikuti Kami:</h6>
                         <a href="#" class="me-2 text-info text-info"><i class="fab fa-facebook fa-lg"></i></a>

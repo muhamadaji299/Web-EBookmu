@@ -51,7 +51,6 @@
           <td>{{ $pesan->nama }}</td>
           <td>{{ $pesan->email }}</td>
           <td>{{ $pesan->pesan }}</td>
-          <td>{{ $pesan->created_at->format('d-m-Y H:i') }}</td>
           <td>
             <form action="" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin Menghapus?')">
             <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>

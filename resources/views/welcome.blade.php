@@ -19,7 +19,7 @@
   <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
     <div class="text-center">
       <h1 class="display-4 fw-bold">Welcome</h1>
-      <p class="lead">Selamat datang di e-Library. Temukan berbagai bacaan digital menarik dan edukatif untuk semua kalangan.</p>
+      <p class="lead">Selamat datang di E-Bookmu. Temukan berbagai bacaan digital menarik dan edukatif untuk semua kalangan.</p>
       <div class="">
       <a href="{{ route('login')}}" class="btn btn-light px-4">Login</a>
       <a href="{{ route('register')}}" class="btn btn-outline-light px-4">Register</a>
