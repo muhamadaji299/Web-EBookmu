@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\user\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Pest\Plugins\Only;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,7 +22,7 @@ Route::get('/login', function () {
         } elseif ($user->role == 'user') {
             return redirect()->route('user.index');
         } else {
-            return redirect()->route('user.dashboard.index');
+            return redirect()->route('auth.login');
         }
     }
     return app(AuthController::class)->showLoginForm();
@@ -43,7 +44,7 @@ Route::get('/register', function () {
         } elseif ($user->role == 'user') {
             return redirect()->route('user.index');
         } else {
-            return redirect()->route('user.dashboard.index');
+            return redirect()->route('auth.register');
         }
     }
     return app(AuthController::class)->showRegisterForm();
@@ -57,7 +58,6 @@ Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('kelolabuku', KelolaBukuController::class);
     Route::resource('pengguna', PenggunaController::class)->only(['index','destroy']);
     Route::get('bukularis', [AdminController::class, 'bukuTerpopuler'])->name('admin.bukularis.index');
-    Route::resource('laporan', LaporanController::class);
 });
 
 Route::middleware(['auth', 'user'])->group(function (){

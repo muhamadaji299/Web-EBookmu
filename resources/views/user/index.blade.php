@@ -288,27 +288,19 @@
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow rounded-3">
 
-                        {{-- ALERT JIKA BERHASIL --}}
-                        @if(session('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('success') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        @endif
-
-                        <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-                                <label for="name" class="form-label">Nama</label>
-                                <input type="text" name="nama" class="form-control" id="name" placeholder="Nama lengkap kamu" required>
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama lengkap kamu" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Alamat Email</label>
                                 <input type="email" name="email" class="form-control" id="email" placeholder="email@kamu.com" required>
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="form-label">Pesan</label>
-                                <textarea name="pesan" class="form-control" id="message" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
+                                <label for="pesan" class="form-label">Pesan</label>
+                                <textarea name="pesan" class="form-control" id="pesan" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-info text-light w-100">Kirim Pesan</button>
                         </form>

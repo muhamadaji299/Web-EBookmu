@@ -47,19 +47,6 @@
             </div>
             <div class="card-icon"><i class="fas fa-sync"></i></div>
           </div>
-        </div>
-        <!-- Laporan -->
-        <div class="col-md-6 col-xl-3">
-          <div class="dashboard-card card-red">
-            <div>
-              <h1 class="display-5">2</h1>
-              <h5>Laporan Sirkulasi</h5>
-              <div class="more-info">More info <i class="fas fa-arrow-circle-right"></i></div>
-            </div>
-            <div class="card-icon"><i class="fas fa-chart-bar"></i></div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   @endsection

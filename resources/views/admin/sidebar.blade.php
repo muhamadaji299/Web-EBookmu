@@ -19,12 +19,7 @@
             "title" => "Buku Terlaris",
             "path" => "bukularis",
             "icon" => "fas fa-exchange-alt"
-        ],
-        (object)[
-            "title" => "Kelola Pesan",
-            "path" => "laporan",
-            "icon" => "fas fa-file-alt"
-        ],
+        ]
     ];
 @endphp
 
