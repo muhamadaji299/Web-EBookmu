@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Navbar E-Book</title>
@@ -11,9 +10,7 @@
     <link rel="stylesheet" href="{{ url('css/user.css')}}">
 
 </head>
-
 <body>
-
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container">
             <!-- Logo -->
@@ -194,14 +191,12 @@
     <section class="py-5 bg-light" id="komen">
         <div class="container">
             <h2 class="text-center mb-4">Apa Kata Mereka?</h2>
-
             <div class="position-relative">
                 <!-- Tombol Kiri -->
                 <button class="btn btn-outline-dark position-absolute top-50 start-0 translate-middle-y z-1"
                     id="prevComment">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-
                 <!-- Scrollable Area -->
                 <div class="d-flex overflow-hidden" id="commentContainer">
                     <div class="d-flex transition" style="gap: 1rem; min-width: max-content;">
@@ -255,7 +250,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Tombol Kanan -->
                 <button class="btn btn-outline-dark position-absolute top-50 end-0 translate-middle-y z-1"
                     id="nextComment">
@@ -283,11 +277,9 @@
                         <a href="#" class="text-info text-info"><i class="fab fa-instagram fa-lg"></i></a>
                     </div>
                 </div>
-
                 <!-- Form -->
                 <div class="col-md-6">
                     <div class="p-4 bg-white shadow rounded-3">
-
                         <form action="" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
@@ -303,16 +295,13 @@
                                 <textarea name="pesan" class="form-control" id="pesan" rows="4" placeholder="Tulis pesanmu di sini..." required></textarea>
                             </div>
                             <button type="submit" class="btn btn-info text-light w-100">Kirim Pesan</button>
-                        </form>
-
+                       </form>
                     </div>
                 </div>
-
             </div>
         </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-info text-light py-4">
         <div class="container text-center">
@@ -323,8 +312,7 @@
 
 
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 <script>
     const commentContainer = document.getElementById('commentContainer');
