@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar E-Book</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,50 +11,57 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-            <!-- Logo -->
-            <a class="navbar-brand" href="#">
-                <h3 class="text-info">E-Bookmu</h3>
-            </a>
+  
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <h3 class="text-info">E-Bookmu</h3>
+    </a>
 
-            <!-- Menu tengah -->
-            <div class="collapse navbar-collapse justify-content-center">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#produk">Ebook</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#komen">Komentar
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Toggle tombol -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <!-- Tombol kanan -->
-            <div class="d-flex">
-                <form action="{{ route('logout')}}" method="POST">
-                    @csrf
-                    <button class="btn btn-info text-light">Logout</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+    <!-- Menu + Tombol logout -->
+    <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+      
+      <!-- Menu navigasi di tengah -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-dark active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#produk">Ebook</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#komen">Komentar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#contact">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Tombol logout -->
+      <form action="{{ route('logout')}}" method="POST" class="ms-lg-3 mt-3 mt-lg-0">
+        @csrf
+        <button class="btn btn-info text-light">Logout</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
 
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Kiri: Teks dan tombol -->
-                <div class="col-md-6 mb-4 mb-md-0">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <h1 class="display-4 fw-bold">
                         <i class="bi bi-book" style="color: #00cfff;"></i> Welcome
                     </h1>
@@ -198,8 +205,9 @@
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 <!-- Scrollable Area -->
-                <div class="d-flex overflow-hidden" id="commentContainer">
-                    <div class="d-flex transition" style="gap: 1rem; min-width: max-content;">
+                 <div class="d-flex overflow-hidden" id="commentContainer">
+  <div class="d-flex flex-nowrap transition" style="gap: 1rem;">
+
                         <!-- Komentar Card 1 -->
                         <div class="card shadow-sm" style="width: 300px;">
                             <div class="card-body">
